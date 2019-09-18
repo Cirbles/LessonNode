@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <div id="output"></div>
+
+    <script type="text/javascript">
+        // 创建script标签
+        function importScript(src){
+            var el = document.createElement('script');
+            el.src = src;
+            el.async = true;
+            el.defer = true;
+            document.body.appendChild(el);
+        }
+
+        // 响应的方法
+        function jsonpcallback(rs) {
+            console.log(JSON.stringify(rs));
+            document.getElementById("output").innerHTML = JSON.stringify(rs);
+        }
+
+        // 发起get请求
+        importScript('http://127.0.0.1:8888?userid=xiaoqingnian&callback=jsonpcallback');
+    </script>
+</head>
+<body>
+<h1>Hello World</h1>
+</body>
+</html>
