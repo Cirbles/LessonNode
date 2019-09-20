@@ -265,6 +265,6 @@ var a = ["A","B","C"];
 //     console.log(x);
 // }
 
-a.forEach(function (index) {
-    console.log(index);
-});
+// a.forEach(function (index) {
+//     console.log(index);
+// });
